@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fatin's Creative Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hey, I'm Fatin Nadhirah Abdul Hadi! 👩🏻‍💻</h1>
+    <p>Multimedia & Design Explorer | Game Developer | UI/UX Enthusiast</p>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeSwitcher">
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">☀️ Light Mode</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>✨ About Me</h2>
+    <p>I'm a passionate Computer Science (Multimedia) student from UiTM Jasin. I love turning ideas into engaging visuals and playful experiences — whether it's through games, interactive content, or design. I believe creativity meets code, and that’s where the magic happens. 💡</p>
+  </section>
+
+ <section id="projects">
+  <h2>🎮 Featured Projects</h2>
+
+  <div class="project">
+    <h3>🌙 Melaka Islamic VR</h3>
+    <p>Step into a VR journey about Islamic astronomy — my final year project using Unity, C# and 3ds Max!</p>
+    <div class="scroll-gallery">
+      <img src="images/vr1.jpg" alt="Melaka VR Screenshot 1">
+      <img src="images/vr2.jpg" alt="Melaka VR Screenshot 2">
+      <img src="images/vr3.jpg" alt="Melaka VR Screenshot 3">
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>🌾 Harvest Rush</h3>
+    <p>An educational game about harvesting! Built with Construct 3 and visual magic from Canva.</p>
+    <div class="scroll-gallery">
+      <img src="images/harvest1.jpg" alt="Harvest Rush Screenshot 1">
+      <img src="images/harvest2.jpg" alt="Harvest Rush Screenshot 2">
+      <img src="images/harvest3.jpg" alt="Harvest Rush Screenshot 3">
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>🍩 Donut Cafe VR</h3>
+    <p>A sweet VR simulation of a donut shop — you can walk in, grab, and enjoy virtually.</p>
+    <div class="scroll-gallery">
+      <img src="images/donut1.jpg" alt="Donut Cafe Screenshot 1">
+      <img src="images/donut2.jpg" alt="Donut Cafe Screenshot 2">
+      <img src="images/donut3.jpg" alt="Donut Cafe Screenshot 3">
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>🍔 Cattleman's Kitchen</h3>
+    <p>A CRUD-based web app for online ordering. PHP + MySQL + a lot of creative brain juice!</p>
+    <div class="scroll-gallery">
+      <img src="images/kitchen1.jpg" alt="Kitchen App Screenshot 1">
+      <img src="images/kitchen2.jpg" alt="Kitchen App Screenshot 2">
+      <img src="images/kitchen3.jpg" alt="Kitchen App Screenshot 3">
+    </div>
+  </div>
+</section>
+
+
+  <section id="experience">
+   <h2>💼 Work & Experience</h2>
+    <ul>
+      <li><strong>Tealive (2021)</strong> – Barista, worked under pressure and made people smile with bubble tea!</li>
+      <li><strong>Subway (2022)</strong> – Sandwich Artist, multitasking, teamwork, and toasting bread to perfection.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>🛠️ Skills & Tools</h2>
+    <ul>
+      <li>🎨 Adobe Photoshop, Canva</li>
+      <li>🕹️ Unity 3D, C#, Construct</li>
+      <li>💻 HTML, CSS, JavaScript (basic)</li>
+      <li>📱 UI/UX Design Principles</li>
+      <li>🤝 Teamwork, Communication, Customer Service</li>
+    </ul>
+
+    <h3>📜 Certifications & Extras</h3>
+    <ul>
+      <li>🏆 Top Coders Competition (UiTM)</li>
+      <li>🐾 Zoolunteer Program</li>
+    </ul>
+
+    <h3>🌐 Languages</h3>
+    <ul>
+      <li>Malay – Native</li>
+      <li>English – Competent (MUET Band 4.5)</li>
+      <li>Mandarin – Basic understanding</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>📬 Get in Touch</h2>
+    <p>📧 <a href="mailto:fatinadhirah03@gmail.com">fatinadhirah03@gmail.com</a></p>
+    <p>📱 012-628 1403</p>
+    <p>📍 Masai, Johor</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fatin Nadhirah. Made with coffee, code & creativity ✨</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("themeSwitcher");
+    const themeLabel = document.getElementById("themeLabel");
+    toggle.addEventListener("change", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+      themeLabel.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+  </script>
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  document.querySelectorAll(".scroll-gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add("active");
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+  });
+</script>
+<div id="lightbox" class="lightbox">
+  <span id="lightbox-close">✖</span>
+  <img id="lightbox-img" src="" alt="Preview">
+  <button id="prevBtn" class="nav-btn">⬅️</button>
+  <button id="nextBtn" class="nav-btn">➡️</button>
+</div>
+<div id="lightbox" class="lightbox">
+  <span id="lightbox-close">✖</span>
+  <img id="lightbox-img" src="" alt="Preview">
+  <button id="prevBtn" class="nav-btn">⬅️</button>
+  <button id="nextBtn" class="nav-btn">➡️</button>
+</div>
+
+</body>
+</html>
